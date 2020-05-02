@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		body {
+			padding: 10px;
+			background-color: #fafafa;
+
+		}
+
+		select {
+			width: 100%;
+		}
+
+		input {
+			width: 100%;
+		}
+
+		textarea {
+			resize: none;
+			width: 250px;
+			height: 250px;
+		}
+
+		#buttonInfo {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		#buttons {
+			width: 100%;
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+		}
+
+		.button {
+			background-color: white;
+			display: inline-block;
+			margin: 3px;
+			text-align: center;
+			padding: 10px;
+			border: 1px solid #aaa;
+			border-radius: 10px;
+			flex: 1;
+			font-weight: bold;
+			font-size: 12px;
+			transition-duration: 0.3s;
+			user-select: none;
+			vertical-align: middle;
+		}
+
+		.button:hover {
+			background-color: #eee;
+			transition-duration: 0.3s;
+		}
+
+		.button.blue {
+			color: #009;
+		}
+
+		.button.red {
+			color: #a00;
+		}
+
+		[hidden] {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="content">
+
+		<div id="header">
+			<select id="noteSelect">
+				<option>Unsaved Note</option>
+			</select>
+		</div>
+		<br />
+
+		Note:
+		<textarea></textarea>
+		<br />
+
+		<div id="buttonInfo">
+
+			<div id="saveInfo" hidden>
+				Save as:
+				<input type='text' id="nameInput" value='untitled' />
+			</div>
+
+			<div id="deleteInfo" hidden>
+				<p>You are about to delete this note. Are you sure?</p>
+			</div>
+		</div>
+
+		<div id=buttons>
+			<div id="deleteButton" 	class='button red'>Delete Note</div>
+			<div id="saveButton" 	class='button blue'>Save Note</div>
+			<div id="cancelButton"  class='button red' hidden>Cancel</div>
+			<div id="confirmButton" class='button blue' hidden>Confirm</div>
+		</div>
+
+	</div>
+
+	<script type='text/javascript' src="popup.js"></script>
+</body>
+
+</html>
